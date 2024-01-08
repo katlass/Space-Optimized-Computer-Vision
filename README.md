@@ -18,8 +18,6 @@ Hyperparameters are found through 29 trial runs on a purely pruning based model.
 We included all codes as jupyter notebooks, and all the notebooks can be run on GCP VMs. Note that for the distributed training of the supermodel, it needs to be run on Vertex AI. The set up of Vertex AI is described in detail in this video: https://www.youtube.com/watch?v=rAGauhXYgw4&list=WL&index=1 . When logged into Vertex AI workbench, press the "JupyterLab" button to launch jupyterlab, and upload the jupyter notebook using the UI. Then, on the upper-right corner, select the machine configuration. We used 2 Tesla V100 GPUs each with 4 CPUs and 15 GB RAM. Now, the distributed training notebook can be run just as a standard jupyter notebook. Run final_demo.ipynb to train a Cifar100 model. You must first change the logname in resnet_training() to your appropriate file path to store training data. Feel free to experiment with hyperparameters such as inital/final sparsity, pruning frequency, pruning schedule, etc as instructed in the demo notebook. Another notebook, mixed_precision.ipynb is also included which demonstrates training with mixed float16 datatypes for computations and float32 for variables. <br>
 
 **Results (including charts/tables) and observations**  <br>
-A graph to illustrate the architecture of our super model: <br>
-
 <img width="747" alt="Screen Shot 2022-12-19 at 12 58 59 AM" src="https://user-images.githubusercontent.com/48727287/208357975-26d242e5-8ff6-48f7-b5af-e5dc662c887f.png">
 <br>
 
