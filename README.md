@@ -25,7 +25,8 @@ We included all codes as jupyter notebooks, and all the notebooks can be run on 
 When testing polynomial decaying sparsity with a final sparsity of 60%, we find introducing data augmentation more than offsets the lost accuracy from fewer neurons. Accuracy on the testing set is highest using the resnet 44, with both shallow and deep networks seeing a 1.5x increase. When quantization is applied using TensorFlow Lite, the same networks can be stored in nearly half the bytes of the original model without dampening accuracy. This model is thus superior in terms of size and accuracy. 
 <br>
 We achieved a noticeable improvement in accuracy, for both Resnet20 and Resnet44.  <br>
-The Best Overall model is ResNet 44 Model. It achieved ~ x1.5 test accuracy improvement.  <br>
+The Best Overall model is ResNet 44 Model: <br>
+It achieved ~ x1.5 test accuracy improvement.  <br>
 Size of quantized file is ~ x1.8 memory reduction for both.  <br>
 
 <img width="302" alt="Screen Shot 2022-12-19 at 1 01 03 AM" src="https://user-images.githubusercontent.com/48727287/208358211-122fe9f2-0c2a-4475-ae5e-96f5a5623b5f.png">
@@ -34,7 +35,7 @@ Size of quantized file is ~ x1.8 memory reduction for both.  <br>
 70% Sparsity Model  <br>
 Next, we attempted to fine-tune the model slightly by keeping all the other parameters the same but changing final sparsity to 70%. The goal here would be to store an even smaller model, with 10% more zero weights, without losing much accuracy. The increase in test accuracy is similar to that of the model with 60% sparsity, losing just 1% accuracy for this size reduction. 
 <br>
-We achieved a Noticeable improvement in accuracy, for both ResNet 20 and ResNet 44.   <br>
+We achieved a noticeable improvement in accuracy, for both ResNet 20 and ResNet 44.   <br>
 The Best Overall model is ResNet 44 Model. It has ~ x1.5 test accuracy improvement.  <br>
 The improvements of size of quantized file are listed below:   <br>
 ~ x1.8 memory reduction for Resnet 20  <br>
