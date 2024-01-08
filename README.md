@@ -1,23 +1,21 @@
-# COMS6998_FinalProj: Building a Super Model: Pruning Techniques and Distributed DL for Training Efficiency
+# COMS6998_FinalProj: Weight Pruning and Distributed DL for Space Efficiency with TensorFlow Lite
 
 **A description of the project**  <br>
-In this project we set out to optimize convolution neural networks through exploring the techniques of data augmentation, pruning, mixed precision, quantization and synchronous training. 
-
+We develop a space optimized CNN for image classification through synchronous distributed training, weight pruning, and quantization in Vertex AI on Google Cloud Platform.
 
 
 **A description of the repository** <br>
 This repository contains the codes and all relevant training logs/models produced during the project. <br>
 The training logs and models for ResNet 20 and ResNet 44 are stored in separate folders respectively.<br>
 
-Under the folder codes, we include all training codes for the trials of exploration, for example, testing constant sparsity, poly-sparsity, and distributed training, using CIFAR-10 and CIFAR-100 datasets. <br>
+Under the folder /codes we include all training codes for the trials of exploration. These include testing constant vs. polynomially decaying sparsity in weight pruning and also mixed precision vs. full precision training on both CIFAR-10 and CIFAR-100 datasets. <br>
 
-The notebooks that produced the results for our super model trials are named super_sixty.ipynb and super_seventy.ipynb in the codes folder. <br>
+We trained two different models, one with final sparsity 60% and one with 70% sparsity. The notebooks that produced the results of our final model trials are sixty_sparsity.ipynb and seventy_sparsity.ipynb in the /codes folder. <br>
 
-We tried two different “super”-models, one with final sparsity 60% and one with 70% sparsity. As mentioned in the presentation, the hyperparameters are found through 29 trial runs on a purely pruning based model. We selected the maximal sparsity, 60%, that gives the desired validation accuracy. We tried both 60% and 70% in order to fine tune the model. The training log and trained models are stored under /Super_Model/super_0.6 and  /Super_Model/super_0.7 <br>
-
+Hyperparameters are found through 29 trial runs on a purely pruning based model. We selected the maximal sparsity, 60%, that gives the desired validation accuracy. The training log and trained models are stored under /Super_Model/super_0.6 and  /Super_Model/super_0.7 <br>
 
 **Example commands to execute the code**   <br>     
-We included all codes as jupyter notebooks, and all the notebooks can be run on GCP VMs. Note that for the distributed training of the supermodel, it needs to be run on Vertex AI. The set up of Vertex AI is described in detail in this video: https://www.youtube.com/watch?v=rAGauhXYgw4&list=WL&index=1 . When logged into Vertex AI workbench, press the "JupyterLab" button to launch jupyterlab, and upload the jupyter notebook using the UI. Then, on the upper-right corner, select the machine configuration. We used 4 CPUs, 15 GB RAM, and 1 Tesla V100. Now, the distributed training notebook can be run just as a standard jupyter notebook. Run super_demo.ipynb to train a Cifar100 super model. You must first change the logname in resnet_training() to your appropriate file path to store training data. Feel free to experiment with hyperparameters such as inital/final sparsity, pruning frequency, pruning schedule, etc as instructed in the demo notebook. Another notebook, mixed_precision.ipynb is also included which demonstrates training with mixed float16 datatypes for computations and float32 for variables. <br>
+We included all codes as jupyter notebooks, and all the notebooks can be run on GCP VMs. Note that for the distributed training of the supermodel, it needs to be run on Vertex AI. The set up of Vertex AI is described in detail in this video: https://www.youtube.com/watch?v=rAGauhXYgw4&list=WL&index=1 . When logged into Vertex AI workbench, press the "JupyterLab" button to launch jupyterlab, and upload the jupyter notebook using the UI. Then, on the upper-right corner, select the machine configuration. We used 2 Tesla V100 GPUs each with 4 CPUs, 15 GB RAM, and . Now, the distributed training notebook can be run just as a standard jupyter notebook. Run super_demo.ipynb to train a Cifar100 super model. You must first change the logname in resnet_training() to your appropriate file path to store training data. Feel free to experiment with hyperparameters such as inital/final sparsity, pruning frequency, pruning schedule, etc as instructed in the demo notebook. Another notebook, mixed_precision.ipynb is also included which demonstrates training with mixed float16 datatypes for computations and float32 for variables. <br>
 
 **Results (including charts/tables) and observations**  <br>
 A graph to illustrate the architecture of our super model: <br>
