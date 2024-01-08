@@ -44,7 +44,7 @@ The improvements of size of quantized file are listed below:   <br>
 <br>
 
 The Best Model  <br>
-Overall, the model that performs best in terms of test accuracy is the resnet 44 model with data augmentation and 60% polynomially decaying sparsity. However, the loss in accuracy is very minimal between 60% and 70% sparsity. Given you are willing to sacrifice the one percent accuracy, you could opt for the other approach of using the 70% sparsity model. We do see that quantization roughly halfs memory. Overall, if you were going to train this dataset with resnet 20, the optimized model with 70% sparsity would be the best choice for a very small model, faster training time and only 3% less accuracy.
+Overall, the model that performs best in terms of test accuracy is the resnet 44 model with data augmentation and 60% polynomially decaying sparsity. However, the loss in accuracy is very minimal between 60% and 70% sparsity. Given you are willing to sacrifice the one percent accuracy, you could opt for the other approach of using the 70% sparsity model. We do see that quantization roughly halves memory. Overall, if you were going to train this dataset with resnet 20, the optimized model with 70% sparsity would be the best choice for a very small model, faster training time and only 3% less accuracy.
 <br>
 The best accuracy is achieved by the ResNet 44 model with 60% sparsity, narrow margin with 70% sparsity.  <br>
 
