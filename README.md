@@ -34,7 +34,6 @@ The Best Overall model is ResNet 44 Model: <br>
 70% Sparsity Model  <br>
 Next, we attempted to fine-tune the model slightly by keeping all the other parameters the same but changing final sparsity to 70%. The goal here would be to store an even smaller model, with 10% more zero weights, without losing much accuracy. The increase in test accuracy is similar to that of the model with 60% sparsity, losing just 1% accuracy for this size reduction. 
 <br>
-We achieved a noticeable improvement in accuracy, for both ResNet 20 and ResNet 44.   <br>
 The Best Overall model is ResNet 44 Model. It has ~ x1.5 test accuracy improvement.  <br>
 The improvements of size of quantized file are listed below:   <br>
 ~ x1.8 memory reduction for Resnet 20  <br>
