@@ -1,4 +1,4 @@
-# COMS6998_FinalProj: Weight Pruning and Distributed DL for Space Efficiency with TensorFlow Lite
+Weight Pruning and Distributed DL for Space Efficiency with TensorFlow Lite: Deep Learning for Computer Vision
 
 **A description of the project**  <br>
 We develop a space optimized CNN for image classification through synchronous distributed training, weight pruning, and quantization in Vertex AI on Google Cloud Platform.
